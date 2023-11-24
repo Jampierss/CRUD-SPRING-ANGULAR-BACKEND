@@ -32,7 +32,7 @@ public class SubareaServiceImpl implements ISubareaService{
     }
 
     @Override
-    public Page<Subarea> findAllPageAndSort(String nombre, Integer estadoId, String columnSort, int order, int page) {
+    public Page<Subarea> findAllPageAndSort(String nombre, String areaNombre, Integer estadoId, String columnSort, int order, int page) {
         Pageable sorted = null;
 
         if (order == 0) {
@@ -40,7 +40,7 @@ public class SubareaServiceImpl implements ISubareaService{
         } else {
             sorted = PageRequest.of(page, VariablesGlobales.ITEMS_PER_PAGE_MAESTROS, Sort.by(columnSort).descending());
         }
-        return subareaDAO.findAllPageAndSort(nombre, estadoId, sorted);
+        return subareaDAO.findAllPageAndSort(nombre, areaNombre, estadoId, sorted);
     }
 
     @Override

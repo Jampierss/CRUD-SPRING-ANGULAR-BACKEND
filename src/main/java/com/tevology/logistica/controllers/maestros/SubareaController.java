@@ -127,11 +127,12 @@ public class SubareaController {
     @GetMapping("/subarea/page")
     public Page<Subarea> index (
             @RequestParam(name = "nombre", required = false, defaultValue = "") String nombre,
+            @RequestParam(name = "areaNombre", required = false, defaultValue = "") String areaNombre,
             @RequestParam(name = "estadoId", required = false, defaultValue = "-1") Integer estadoId,
             @RequestParam(name = "columnSort", required = false, defaultValue = "id") String columnSort,
             @RequestParam(name = "order", required = false, defaultValue = "0") Integer order,
             @RequestParam(value = "pagina", required = false, defaultValue = "0") Integer page) {
-        return subareaService.findAllPageAndSort(nombre, estadoId, columnSort, order, page);
+        return subareaService.findAllPageAndSort(nombre,areaNombre, estadoId, columnSort, order, page);
     }
 
     @GetMapping("/subarea/autocomplete")

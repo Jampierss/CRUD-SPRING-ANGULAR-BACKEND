@@ -23,4 +23,9 @@ public class AreaController {
     public Area save(@RequestBody Area area) {
         return areaService.save(area);
     }
+
+    @GetMapping("/area/filtrar/{term}")
+    public List<Area> autocomplete(@PathVariable String term) {
+        return areaService.findByNombre(term);
+    }
 }

@@ -10,4 +10,5 @@ public interface IAreaService {
 
     public Area save(Area area);
 
+    public List<Area> findByNombre(String term);
 }

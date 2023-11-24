@@ -10,7 +10,7 @@ public interface ISubareaService {
     public Subarea findById(Long id);
     public List<Subarea> findAll();
 
-    public Page<Subarea> findAllPageAndSort(String nombre, Integer estadoId, String columnSort, int order, int page);
+    public Page<Subarea> findAllPageAndSort(String nombre, String areaNombre, Integer estadoId, String columnSort, int order, int page);
     public Subarea save(Subarea subarea);
 
     public List<Subarea> autocompleteList(String term);

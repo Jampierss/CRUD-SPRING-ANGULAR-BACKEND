@@ -34,7 +34,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		.antMatchers(HttpMethod.PUT,"/api/usuarios/{id}").hasAnyRole("TI")
 		.antMatchers(HttpMethod.PUT,"/api/user/password/{id}").authenticated()
 		.antMatchers(HttpMethod.PUT,"/api/user/datos/{id}").authenticated()
-		
+				.anyRequest().permitAll()
+		/*
 		//Parametros, Modulos y Tabla Auxiliar
 		.antMatchers(HttpMethod.GET,"/api/parametro/{id}","/api/parametro/parametros").authenticated()
 		.antMatchers(HttpMethod.GET,"/api/tablaAuxiliar/all","/api/modulo/all","/api/subModulo/all",
@@ -65,7 +66,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		.antMatchers(HttpMethod.PUT, "/api/cliente/update/{id}").hasAnyRole("TI")
 		
 		//Configuracion
-		.anyRequest().permitAll()
+		.anyRequest().permitAll()*/
 		.and()
 		.cors().configurationSource(corsConfigurationSource());
 	}
