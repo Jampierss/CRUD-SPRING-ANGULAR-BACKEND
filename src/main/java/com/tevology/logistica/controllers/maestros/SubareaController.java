@@ -102,6 +102,7 @@ public class SubareaController {
 
         try {
             subareaActual.setNombre(subarea.getNombre());
+            subareaActual.setArea(subarea.getArea());
             subareaActual.setAbreviatura(subarea.getAbreviatura());
             subareaActual.setObservacion(subarea.getObservacion());
             subareaActual.setEstado(subarea.getEstado());
